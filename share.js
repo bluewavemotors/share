@@ -130,9 +130,7 @@ function renderCar(
     <div class="gallery">
 
       ${images.map(img => `
-
-        <img src="${img}">
-
+        <img src="${img.trim()}">
       `).join('')}
 
     </div>
@@ -153,7 +151,6 @@ function renderCar(
       </div>
 
       <div class="meta">
-
         <span>${car.year}</span>
 
         <span>•</span>
@@ -162,8 +159,10 @@ function renderCar(
 
         <span>•</span>
 
-        <span>${car.km}</span>
-
+        <span>
+          ${Number(car.km || 0)
+          .toLocaleString('en-IN')} km
+        </span>
       </div>
 
       <div class="price">
