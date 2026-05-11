@@ -46,7 +46,7 @@ async function loadCar() {
     await response.json();
 
     if(
-      !data.success
+      !data.car
     ){
 
       app.innerHTML = `
@@ -63,7 +63,10 @@ async function loadCar() {
 
     }
 
-    renderCar(data.car);
+    renderCar(
+      data.car,
+      data.images || []
+    );
 
   }
 
@@ -84,11 +87,18 @@ async function loadCar() {
 }
 
 
-function renderCar(car){
+function renderCar(
+    car,
+    selectedImages
+  ){
 
   const images =
-  (car.images || '')
-  .split(',');
+  selectedImages.length
+
+  ? selectedImages
+
+  : (car.images || '')
+    .split(',');
 
   app.innerHTML = `
 
