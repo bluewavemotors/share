@@ -98,7 +98,9 @@ function renderCar(
   ? selectedImages
 
   : (car.images || '')
-    .split(',');
+    .split(',')
+    .map(i => i.trim())
+    .filter(Boolean);
 
   app.innerHTML = `
 
