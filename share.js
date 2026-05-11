@@ -1,5 +1,5 @@
 const API_URL =
-'PASTE_SHARE_API_LATER';
+"https://script.google.com/macros/s/AKfycbz8hbybFJOHB2Wn9tSdU-xsS7M7hCo5b2Rpljqs4us0MNvCVF4-Agx1PK7aTVHx-l2k/exec";
 
 
 const params =
